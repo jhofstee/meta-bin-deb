@@ -3,8 +3,6 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 
 SRC_URI = "file://main.cpp"
 
-RDEPENDS_${PN} = "dbus"
-
 do_compile() {
 	${CXX} ${WORKDIR}/main.cpp -o ${B}/hello-from-cpp
 }
