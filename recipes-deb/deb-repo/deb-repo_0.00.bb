@@ -6,7 +6,6 @@ inherit cross
 PACKAGES = "${PN}-${DISTRO}"
 
 DEB_ROOTFS = "${TMPDIR}/deb/${DISTRO}/debroot"
-DEB_SOURCES = "deb http://archive.raspbian.org/raspbian wheezy main contrib non-free"
 
 SRC_URI = "file://apt.conf"
 S = "${WORKDIR}"
@@ -14,6 +13,11 @@ S = "${WORKDIR}"
 do_install () {
 	# hack
 	rm -rf ${DEB_ROOTFS}
+
+	if [ "${DEB_SOURCES}" = "" ]; then
+		bberror DEB_SOURCES is not set
+		exit 1
+	fi
 
 	mkdir -p ${DEB_ROOTFS}
 	mkdir -p ${DEB_ROOTFS}/var/lib/dpkg
@@ -27,6 +31,7 @@ do_install () {
 	touch ${DEB_ROOTFS}/etc/var/lib/dpkg/status
 
 	mkdir -p ${DEB_ROOTFS}/etc/apt
+	mkdir -p ${DEB_ROOTFS}/etc/apt/preferences.d
 	install apt.conf ${DEB_ROOTFS}/etc/apt
 	sed -i \
 		-e 's#[$]{DEB_ROOTFS}#${DEB_ROOTFS}#' \
