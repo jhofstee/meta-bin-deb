@@ -20,12 +20,17 @@ S = "${WORKDIR}"
 
 do_install () {
 	mkdir -p `dirname ${QT_MKSPEC_CROSS}`
+	cp -r ${STAGING_DATADIR}/qt4/mkspecs/* `dirname ${QT_MKSPEC_CROSS}`/..
 	echo "include(${STAGING_DATADIR}/qt4/mkspecs/default/qmake.conf)" > ${QT_MKSPEC_CROSS}
+	# note the =/ in the value is the sysroot
+	echo "QMAKE_INCDIR_QT==/usr/include/qt4" >> ${QT_MKSPEC_CROSS}
 	echo "QMAKE_AR=${AR}" >> ${QT_MKSPEC_CROSS}
 	echo "QMAKE_CC=${CC}" >> ${QT_MKSPEC_CROSS}
 	echo "QMAKE_CXX=${CXX}" >> ${QT_MKSPEC_CROSS}
 	echo 'QMAKE_LINK=${CXX}' >> ${QT_MKSPEC_CROSS}
 	echo 'QMAKE_LIBDIR_QT=${STAGING_LIBDIR}' >> ${QT_MKSPEC_CROSS}
+	# todo: probe the moc name?
+	echo 'QMAKE_MOC=$$[QT_INSTALL_BINS]/moc' >> ${QT_MKSPEC_CROSS}
 }
 
 #FAKE LICENSE FOR TESTING!!!
