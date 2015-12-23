@@ -1,6 +1,5 @@
 PACKAGES = "libdbus-glib-1-2"
 PROVIDES = "libdbus-glib-1-2"
-PACKAGE_EXCLUDE = "libdbus-glib-1-2"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/d/dbus-glib/libdbus-glib-1-2_0.100.2-1_armhf.deb;unpack=0;name=deb0\
 "

@@ -1,6 +1,5 @@
 PACKAGES = "python-dbus python-dbus-dev"
 PROVIDES = "python-dbus python-dbus-dev"
-PACKAGE_EXCLUDE = "python-dbus python-dbus-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/d/dbus-python/python-dbus_1.1.1-1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/d/dbus-python/python-dbus-dev_1.1.1-1_all.deb;unpack=0;name=deb1\

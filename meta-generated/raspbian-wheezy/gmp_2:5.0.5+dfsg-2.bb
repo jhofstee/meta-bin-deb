@@ -1,6 +1,5 @@
 PACKAGES = "libgmp10"
 PROVIDES = "libgmp10"
-PACKAGE_EXCLUDE = "libgmp10"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/g/gmp/libgmp10_5.0.5+dfsg-2_armhf.deb;unpack=0;name=deb0\
 "

@@ -1,6 +1,5 @@
 PACKAGES = "libattr1"
 PROVIDES = "libattr1"
-PACKAGE_EXCLUDE = "libattr1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/a/attr/libattr1_2.4.46-8_armhf.deb;unpack=0;name=deb0\
 "

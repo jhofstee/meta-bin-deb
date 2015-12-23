@@ -1,6 +1,5 @@
 PACKAGES = "libffi5"
 PROVIDES = "libffi5"
-PACKAGE_EXCLUDE = "libffi5"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libf/libffi/libffi5_3.0.10-3+b3_armhf.deb;unpack=0;name=deb0\
 "

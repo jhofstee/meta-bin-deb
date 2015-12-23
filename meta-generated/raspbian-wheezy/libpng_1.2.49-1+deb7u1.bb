@@ -1,6 +1,5 @@
 PACKAGES = "libpng12-0"
 PROVIDES = "libpng12-0"
-PACKAGE_EXCLUDE = "libpng12-0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libp/libpng/libpng12-0_1.2.49-1+deb7u1_armhf.deb;unpack=0;name=deb0\
 "

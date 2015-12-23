@@ -1,6 +1,5 @@
 PACKAGES = "python2.7 python2.7-minimal"
 PROVIDES = "python2.7 python2.7-minimal"
-PACKAGE_EXCLUDE = "python2.7 python2.7-minimal"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/p/python2.7/python2.7_2.7.3-6+deb7u2_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/p/python2.7/python2.7-minimal_2.7.3-6+deb7u2_armhf.deb;unpack=0;name=deb1\

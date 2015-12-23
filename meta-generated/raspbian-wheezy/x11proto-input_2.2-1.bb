@@ -1,6 +1,5 @@
 PACKAGES = "x11proto-input-dev"
 PROVIDES = "x11proto-input-dev"
-PACKAGE_EXCLUDE = "x11proto-input-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/x/x11proto-input/x11proto-input-dev_2.2-1_all.deb;unpack=0;name=deb0\
 "

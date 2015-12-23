@@ -1,6 +1,5 @@
 PACKAGES = "libpopt0"
 PROVIDES = "libpopt0"
-PACKAGE_EXCLUDE = "libpopt0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/p/popt/libpopt0_1.16-7_armhf.deb;unpack=0;name=deb0\
 "

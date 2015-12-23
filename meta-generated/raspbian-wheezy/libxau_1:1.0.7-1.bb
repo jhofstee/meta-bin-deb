@@ -1,6 +1,5 @@
 PACKAGES = "libxau6 libxau-dev"
 PROVIDES = "libxau6 libxau-dev"
-PACKAGE_EXCLUDE = "libxau6 libxau-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libx/libxau/libxau6_1.0.7-1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/libx/libxau/libxau-dev_1.0.7-1_armhf.deb;unpack=0;name=deb1\

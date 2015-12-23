@@ -1,6 +1,5 @@
 PACKAGES = "libboost-system1.49-dev libboost-program-options1.49-dev libboost-date-time1.49-dev libboost-date-time1.49.0 libboost-program-options1.49.0 libboost-thread1.49-dev libboost-serialization1.49.0 libboost-system1.49.0 libboost-regex1.49.0 libboost-regex1.49-dev libboost-serialization1.49-dev libboost1.49-dev libboost-thread1.49.0"
 PROVIDES = "libboost-system1.49-dev libboost-program-options1.49-dev libboost-date-time1.49-dev libboost-date-time1.49.0 libboost-program-options1.49.0 libboost-thread1.49-dev libboost-serialization1.49.0 libboost-system1.49.0 libboost-regex1.49.0 libboost-regex1.49-dev libboost-serialization1.49-dev libboost1.49-dev libboost-thread1.49.0"
-PACKAGE_EXCLUDE = "libboost-system1.49-dev libboost-program-options1.49-dev libboost-date-time1.49-dev libboost-date-time1.49.0 libboost-program-options1.49.0 libboost-thread1.49-dev libboost-serialization1.49.0 libboost-system1.49.0 libboost-regex1.49.0 libboost-regex1.49-dev libboost-serialization1.49-dev libboost1.49-dev libboost-thread1.49.0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/b/boost1.49/libboost-system1.49-dev_1.49.0-3.2_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/b/boost1.49/libboost-program-options1.49-dev_1.49.0-3.2_armhf.deb;unpack=0;name=deb1\

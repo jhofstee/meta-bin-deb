@@ -1,6 +1,5 @@
 PACKAGES = "zlib1g"
 PROVIDES = "zlib1g"
-PACKAGE_EXCLUDE = "zlib1g"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/z/zlib/zlib1g_1.2.7.dfsg-13_armhf.deb;unpack=0;name=deb0\
 "

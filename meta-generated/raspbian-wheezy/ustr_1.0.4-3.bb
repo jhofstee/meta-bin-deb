@@ -1,6 +1,5 @@
 PACKAGES = "libustr-1.0-1"
 PROVIDES = "libustr-1.0-1"
-PACKAGE_EXCLUDE = "libustr-1.0-1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/u/ustr/libustr-1.0-1_1.0.4-3_armhf.deb;unpack=0;name=deb0\
 "

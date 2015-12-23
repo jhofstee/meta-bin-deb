@@ -1,6 +1,5 @@
 PACKAGES = "debianutils"
 PROVIDES = "debianutils"
-PACKAGE_EXCLUDE = "debianutils"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/d/debianutils/debianutils_4.3.2_armhf.deb;unpack=0;name=deb0\
 "

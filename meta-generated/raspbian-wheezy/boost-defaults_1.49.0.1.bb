@@ -1,6 +1,5 @@
 PACKAGES = "libboost-regex-dev libboost-system-dev libboost-program-options-dev libboost-thread-dev"
 PROVIDES = "libboost-regex-dev libboost-system-dev libboost-program-options-dev libboost-thread-dev"
-PACKAGE_EXCLUDE = "libboost-regex-dev libboost-system-dev libboost-program-options-dev libboost-thread-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/b/boost-defaults/libboost-regex-dev_1.49.0.1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/b/boost-defaults/libboost-system-dev_1.49.0.1_armhf.deb;unpack=0;name=deb1\

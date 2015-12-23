@@ -1,6 +1,5 @@
 PACKAGES = "libx11-data libx11-dev libx11-6"
 PROVIDES = "libx11-data libx11-dev libx11-6"
-PACKAGE_EXCLUDE = "libx11-data libx11-dev libx11-6"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libx/libx11/libx11-data_1.5.0-1+deb7u2_all.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/libx/libx11/libx11-dev_1.5.0-1+deb7u2_armhf.deb;unpack=0;name=deb1\

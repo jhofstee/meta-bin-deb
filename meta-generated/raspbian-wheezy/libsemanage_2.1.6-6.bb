@@ -1,6 +1,5 @@
 PACKAGES = "libsemanage1 libsemanage-common"
 PROVIDES = "libsemanage1 libsemanage-common"
-PACKAGE_EXCLUDE = "libsemanage1 libsemanage-common"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libs/libsemanage/libsemanage1_2.1.6-6_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/libs/libsemanage/libsemanage-common_2.1.6-6_all.deb;unpack=0;name=deb1\

@@ -1,6 +1,5 @@
 PACKAGES = "libgcc1 gcc-4.7-base libgomp1 libstdc++6"
 PROVIDES = "libgcc1 gcc-4.7-base libgomp1 libstdc++6"
-PACKAGE_EXCLUDE = "libgcc1 gcc-4.7-base libgomp1 libstdc++6"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/g/gcc-4.7/libgcc1_4.7.2-5+rpi1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/g/gcc-4.7/gcc-4.7-base_4.7.2-5+rpi1_armhf.deb;unpack=0;name=deb1\

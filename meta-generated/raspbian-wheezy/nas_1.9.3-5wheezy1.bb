@@ -1,6 +1,5 @@
 PACKAGES = "libaudio2"
 PROVIDES = "libaudio2"
-PACKAGE_EXCLUDE = "libaudio2"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/n/nas/libaudio2_1.9.3-5wheezy1_armhf.deb;unpack=0;name=deb0\
 "

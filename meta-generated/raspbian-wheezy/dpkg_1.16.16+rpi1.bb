@@ -1,6 +1,5 @@
 PACKAGES = "dpkg"
 PROVIDES = "dpkg"
-PACKAGE_EXCLUDE = "dpkg"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/d/dpkg/dpkg_1.16.16+rpi1_armhf.deb;unpack=0;name=deb0\
 "

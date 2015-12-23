@@ -1,6 +1,5 @@
 PACKAGES = "libselinux1"
 PROVIDES = "libselinux1"
-PACKAGE_EXCLUDE = "libselinux1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libs/libselinux/libselinux1_2.1.9-5_armhf.deb;unpack=0;name=deb0\
 "

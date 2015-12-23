@@ -1,6 +1,5 @@
 PACKAGES = "mime-support"
 PROVIDES = "mime-support"
-PACKAGE_EXCLUDE = "mime-support"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/m/mime-support/mime-support_3.52-1+deb7u1_all.deb;unpack=0;name=deb0\
 "

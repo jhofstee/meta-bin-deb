@@ -1,6 +1,5 @@
 PACKAGES = "libc-bin libc6-dev libc6 libc-dev-bin"
 PROVIDES = "libc-bin libc6-dev libc6 libc-dev-bin"
-PACKAGE_EXCLUDE = "libc-bin libc6-dev libc6 libc-dev-bin"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/e/eglibc/libc-bin_2.13-38+rpi2+deb7u8_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/e/eglibc/libc6-dev_2.13-38+rpi2+deb7u8_armhf.deb;unpack=0;name=deb1\

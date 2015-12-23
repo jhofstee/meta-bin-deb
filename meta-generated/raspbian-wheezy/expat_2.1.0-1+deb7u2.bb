@@ -1,6 +1,5 @@
 PACKAGES = "libexpat1"
 PROVIDES = "libexpat1"
-PACKAGE_EXCLUDE = "libexpat1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/e/expat/libexpat1_2.1.0-1+deb7u2_armhf.deb;unpack=0;name=deb0\
 "

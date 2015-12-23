@@ -1,6 +1,5 @@
 PACKAGES = "libxcb1-dev libxcb1"
 PROVIDES = "libxcb1-dev libxcb1"
-PACKAGE_EXCLUDE = "libxcb1-dev libxcb1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libx/libxcb/libxcb1-dev_1.8.1-2+deb7u1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/libx/libxcb/libxcb1_1.8.1-2+deb7u1_armhf.deb;unpack=0;name=deb1\

@@ -1,6 +1,5 @@
 PACKAGES = "libicu-dev libicu48"
 PROVIDES = "libicu-dev libicu48"
-PACKAGE_EXCLUDE = "libicu-dev libicu48"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/i/icu/libicu-dev_4.8.1.1-12+deb7u3_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/i/icu/libicu48_4.8.1.1-12+deb7u3_armhf.deb;unpack=0;name=deb1\

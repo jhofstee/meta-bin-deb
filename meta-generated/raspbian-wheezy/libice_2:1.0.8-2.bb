@@ -1,6 +1,5 @@
 PACKAGES = "libice6"
 PROVIDES = "libice6"
-PACKAGE_EXCLUDE = "libice6"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libi/libice/libice6_1.0.8-2_armhf.deb;unpack=0;name=deb0\
 "

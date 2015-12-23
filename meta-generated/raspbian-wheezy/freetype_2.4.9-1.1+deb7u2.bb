@@ -1,6 +1,5 @@
 PACKAGES = "libfreetype6"
 PROVIDES = "libfreetype6"
-PACKAGE_EXCLUDE = "libfreetype6"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/f/freetype/libfreetype6_2.4.9-1.1+deb7u2_armhf.deb;unpack=0;name=deb0\
 "

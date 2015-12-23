@@ -1,6 +1,5 @@
 PACKAGES = "libpam-modules libpam0g"
 PROVIDES = "libpam-modules libpam0g"
-PACKAGE_EXCLUDE = "libpam-modules libpam0g"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/p/pam/libpam-modules_1.1.3-7.1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/p/pam/libpam0g_1.1.3-7.1_armhf.deb;unpack=0;name=deb1\

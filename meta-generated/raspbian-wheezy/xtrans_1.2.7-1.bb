@@ -1,6 +1,5 @@
 PACKAGES = "xtrans-dev"
 PROVIDES = "xtrans-dev"
-PACKAGE_EXCLUDE = "xtrans-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/x/xtrans/xtrans-dev_1.2.7-1_all.deb;unpack=0;name=deb0\
 "

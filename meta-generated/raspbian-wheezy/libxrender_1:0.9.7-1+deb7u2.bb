@@ -1,6 +1,5 @@
 PACKAGES = "libxrender1"
 PROVIDES = "libxrender1"
-PACKAGE_EXCLUDE = "libxrender1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libx/libxrender/libxrender1_0.9.7-1+deb7u2_armhf.deb;unpack=0;name=deb0\
 "

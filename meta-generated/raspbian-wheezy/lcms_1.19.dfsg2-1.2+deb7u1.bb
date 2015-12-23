@@ -1,6 +1,5 @@
 PACKAGES = "liblcms1"
 PROVIDES = "liblcms1"
-PACKAGE_EXCLUDE = "liblcms1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/l/lcms/liblcms1_1.19.dfsg2-1.2+deb7u1_armhf.deb;unpack=0;name=deb0\
 "

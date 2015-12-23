@@ -1,6 +1,5 @@
 PACKAGES = "libsqlite3-0"
 PROVIDES = "libsqlite3-0"
-PACKAGE_EXCLUDE = "libsqlite3-0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/s/sqlite3/libsqlite3-0_3.7.13-1+deb7u2_armhf.deb;unpack=0;name=deb0\
 "

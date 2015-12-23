@@ -1,6 +1,5 @@
 PACKAGES = "libncursesw5 libtinfo5"
 PROVIDES = "libncursesw5 libtinfo5"
-PACKAGE_EXCLUDE = "libncursesw5 libtinfo5"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/n/ncurses/libncursesw5_5.9-10_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/n/ncurses/libtinfo5_5.9-10_armhf.deb;unpack=0;name=deb1\

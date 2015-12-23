@@ -1,6 +1,5 @@
 PACKAGES = "readline-common libreadline6"
 PROVIDES = "readline-common libreadline6"
-PACKAGE_EXCLUDE = "readline-common libreadline6"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/r/readline6/readline-common_6.2+dfsg-0.1_all.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/r/readline6/libreadline6_6.2+dfsg-0.1_armhf.deb;unpack=0;name=deb1\

@@ -1,6 +1,5 @@
 PACKAGES = "libcap2"
 PROVIDES = "libcap2"
-PACKAGE_EXCLUDE = "libcap2"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libc/libcap2/libcap2_2.22-1.2_armhf.deb;unpack=0;name=deb0\
 "

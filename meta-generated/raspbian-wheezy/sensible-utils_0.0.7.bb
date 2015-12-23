@@ -1,6 +1,5 @@
 PACKAGES = "sensible-utils"
 PROVIDES = "sensible-utils"
-PACKAGE_EXCLUDE = "sensible-utils"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/s/sensible-utils/sensible-utils_0.0.7_all.deb;unpack=0;name=deb0\
 "

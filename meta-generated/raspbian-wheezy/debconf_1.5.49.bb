@@ -1,6 +1,5 @@
 PACKAGES = "debconf"
 PROVIDES = "debconf"
-PACKAGE_EXCLUDE = "debconf"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/d/debconf/debconf_1.5.49_all.deb;unpack=0;name=deb0\
 "

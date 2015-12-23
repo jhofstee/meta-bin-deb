@@ -1,6 +1,5 @@
 PACKAGES = "libsm6"
 PROVIDES = "libsm6"
-PACKAGE_EXCLUDE = "libsm6"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libs/libsm/libsm6_1.2.1-2_armhf.deb;unpack=0;name=deb0\
 "

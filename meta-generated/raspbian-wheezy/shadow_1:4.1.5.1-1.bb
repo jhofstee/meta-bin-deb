@@ -1,6 +1,5 @@
 PACKAGES = "passwd"
 PROVIDES = "passwd"
-PACKAGE_EXCLUDE = "passwd"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/s/shadow/passwd_4.1.5.1-1_armhf.deb;unpack=0;name=deb0\
 "

@@ -1,6 +1,5 @@
 PACKAGES = "binutils"
 PROVIDES = "binutils"
-PACKAGE_EXCLUDE = "binutils"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/b/binutils/binutils_2.22-8+deb7u2_armhf.deb;unpack=0;name=deb0\
 "

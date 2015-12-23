@@ -1,6 +1,5 @@
 PACKAGES = "libjbig0"
 PROVIDES = "libjbig0"
-PACKAGE_EXCLUDE = "libjbig0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/j/jbigkit/libjbig0_2.0-2+deb7u1_armhf.deb;unpack=0;name=deb0\
 "

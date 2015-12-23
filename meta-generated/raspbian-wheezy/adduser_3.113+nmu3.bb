@@ -1,6 +1,5 @@
 PACKAGES = "adduser"
 PROVIDES = "adduser"
-PACKAGE_EXCLUDE = "adduser"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/a/adduser/adduser_3.113+nmu3_all.deb;unpack=0;name=deb0\
 "

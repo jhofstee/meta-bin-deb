@@ -1,6 +1,5 @@
 PACKAGES = "libmng1"
 PROVIDES = "libmng1"
-PACKAGE_EXCLUDE = "libmng1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libm/libmng/libmng1_1.0.10-3_armhf.deb;unpack=0;name=deb0\
 "

@@ -1,6 +1,5 @@
 PACKAGES = "xorg-sgml-doctools"
 PROVIDES = "xorg-sgml-doctools"
-PACKAGE_EXCLUDE = "xorg-sgml-doctools"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/x/xorg-sgml-doctools/xorg-sgml-doctools_1.10-1_all.deb;unpack=0;name=deb0\
 "

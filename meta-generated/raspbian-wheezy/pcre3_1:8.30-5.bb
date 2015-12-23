@@ -1,6 +1,5 @@
 PACKAGES = "libpcre3"
 PROVIDES = "libpcre3"
-PACKAGE_EXCLUDE = "libpcre3"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/p/pcre3/libpcre3_8.30-5_armhf.deb;unpack=0;name=deb0\
 "

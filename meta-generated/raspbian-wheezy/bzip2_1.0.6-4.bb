@@ -1,6 +1,5 @@
 PACKAGES = "libbz2-1.0"
 PROVIDES = "libbz2-1.0"
-PACKAGE_EXCLUDE = "libbz2-1.0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/b/bzip2/libbz2-1.0_1.0.6-4_armhf.deb;unpack=0;name=deb0\
 "

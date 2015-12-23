@@ -204,7 +204,6 @@ class OeDebRecipe:
 
 		f.write('PACKAGES = "' + packages.strip() + '"\n');
 		f.write('PROVIDES = "' + packages.strip() + '"\n');
-		f.write('PACKAGE_EXCLUDE = "' + packages.strip() + '"\n');
 
 		f.write('SRC_URI = " \\\n')
 		n = 0

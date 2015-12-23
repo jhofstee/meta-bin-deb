@@ -1,6 +1,5 @@
 PACKAGES = "dbus libdbus-1-3 libdbus-1-dev"
 PROVIDES = "dbus libdbus-1-3 libdbus-1-dev"
-PACKAGE_EXCLUDE = "dbus libdbus-1-3 libdbus-1-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/d/dbus/dbus_1.6.8-1+deb7u6_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/d/dbus/libdbus-1-3_1.6.8-1+deb7u6_armhf.deb;unpack=0;name=deb1\

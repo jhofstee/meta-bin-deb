@@ -1,6 +1,5 @@
 PACKAGES = "ttf-dejavu-core"
 PROVIDES = "ttf-dejavu-core"
-PACKAGE_EXCLUDE = "ttf-dejavu-core"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/t/ttf-dejavu/ttf-dejavu-core_2.33-3_all.deb;unpack=0;name=deb0\
 "

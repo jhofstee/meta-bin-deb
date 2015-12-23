@@ -1,6 +1,5 @@
 PACKAGES = "x11proto-kb-dev"
 PROVIDES = "x11proto-kb-dev"
-PACKAGE_EXCLUDE = "x11proto-kb-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/x/x11proto-kb/x11proto-kb-dev_1.0.6-2_all.deb;unpack=0;name=deb0\
 "

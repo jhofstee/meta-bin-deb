@@ -1,6 +1,5 @@
 PACKAGES = "fontconfig libfontconfig1 fontconfig-config"
 PROVIDES = "fontconfig libfontconfig1 fontconfig-config"
-PACKAGE_EXCLUDE = "fontconfig libfontconfig1 fontconfig-config"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/f/fontconfig/fontconfig_2.9.0-7.1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/f/fontconfig/libfontconfig1_2.9.0-7.1_armhf.deb;unpack=0;name=deb1\

@@ -1,6 +1,5 @@
 PACKAGES = "ucf"
 PROVIDES = "ucf"
-PACKAGE_EXCLUDE = "ucf"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/u/ucf/ucf_3.0025+nmu3_all.deb;unpack=0;name=deb0\
 "

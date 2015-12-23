@@ -1,6 +1,5 @@
 PACKAGES = "libtiff4"
 PROVIDES = "libtiff4"
-PACKAGE_EXCLUDE = "libtiff4"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/t/tiff3/libtiff4_3.9.6-11_armhf.deb;unpack=0;name=deb0\
 "

@@ -1,6 +1,5 @@
 PACKAGES = "pkg-config"
 PROVIDES = "pkg-config"
-PACKAGE_EXCLUDE = "pkg-config"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/p/pkg-config/pkg-config_0.26-1_armhf.deb;unpack=0;name=deb0\
 "

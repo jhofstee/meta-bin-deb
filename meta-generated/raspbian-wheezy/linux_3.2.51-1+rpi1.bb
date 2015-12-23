@@ -1,6 +1,5 @@
 PACKAGES = "linux-libc-dev"
 PROVIDES = "linux-libc-dev"
-PACKAGE_EXCLUDE = "linux-libc-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/l/linux/linux-libc-dev_3.2.51-1+rpi1_armhf.deb;unpack=0;name=deb0\
 "

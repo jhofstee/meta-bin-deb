@@ -1,6 +1,5 @@
 PACKAGES = "libxdmcp-dev libxdmcp6"
 PROVIDES = "libxdmcp-dev libxdmcp6"
-PACKAGE_EXCLUDE = "libxdmcp-dev libxdmcp6"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libx/libxdmcp/libxdmcp-dev_1.1.1-1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/libx/libxdmcp/libxdmcp6_1.1.1-1_armhf.deb;unpack=0;name=deb1\

@@ -1,6 +1,5 @@
 PACKAGES = "libmpfr4"
 PROVIDES = "libmpfr4"
-PACKAGE_EXCLUDE = "libmpfr4"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/m/mpfr4/libmpfr4_3.1.0-5_armhf.deb;unpack=0;name=deb0\
 "

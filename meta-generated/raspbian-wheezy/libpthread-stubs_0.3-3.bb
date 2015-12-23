@@ -1,6 +1,5 @@
 PACKAGES = "libpthread-stubs0-dev libpthread-stubs0"
 PROVIDES = "libpthread-stubs0-dev libpthread-stubs0"
-PACKAGE_EXCLUDE = "libpthread-stubs0-dev libpthread-stubs0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libp/libpthread-stubs/libpthread-stubs0-dev_0.3-3_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/libp/libpthread-stubs/libpthread-stubs0_0.3-3_armhf.deb;unpack=0;name=deb1\

@@ -1,6 +1,5 @@
 PACKAGES = "python python-minimal"
 PROVIDES = "python python-minimal"
-PACKAGE_EXCLUDE = "python python-minimal"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/p/python-defaults/python_2.7.3-4+deb7u1_all.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/p/python-defaults/python-minimal_2.7.3-4+deb7u1_all.deb;unpack=0;name=deb1\

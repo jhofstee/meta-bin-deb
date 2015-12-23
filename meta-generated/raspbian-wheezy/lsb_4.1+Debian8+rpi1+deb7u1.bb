@@ -1,6 +1,5 @@
 PACKAGES = "lsb-base"
 PROVIDES = "lsb-base"
-PACKAGE_EXCLUDE = "lsb-base"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/l/lsb/lsb-base_4.1+Debian8+rpi1+deb7u1_all.deb;unpack=0;name=deb0\
 "

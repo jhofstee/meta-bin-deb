@@ -1,6 +1,5 @@
 PACKAGES = "coreutils"
 PROVIDES = "coreutils"
-PACKAGE_EXCLUDE = "coreutils"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/c/coreutils/coreutils_8.13-3.5_armhf.deb;unpack=0;name=deb0\
 "

@@ -1,6 +1,5 @@
 PACKAGES = "libsepol1"
 PROVIDES = "libsepol1"
-PACKAGE_EXCLUDE = "libsepol1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libs/libsepol/libsepol1_2.1.4-3_armhf.deb;unpack=0;name=deb0\
 "

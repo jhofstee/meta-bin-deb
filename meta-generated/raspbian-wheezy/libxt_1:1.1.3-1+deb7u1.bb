@@ -1,6 +1,5 @@
 PACKAGES = "libxt6"
 PROVIDES = "libxt6"
-PACKAGE_EXCLUDE = "libxt6"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libx/libxt/libxt6_1.1.3-1+deb7u1_armhf.deb;unpack=0;name=deb0\
 "

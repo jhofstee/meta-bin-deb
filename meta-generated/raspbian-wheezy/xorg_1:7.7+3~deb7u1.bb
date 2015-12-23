@@ -1,6 +1,5 @@
 PACKAGES = "x11-common"
 PROVIDES = "x11-common"
-PACKAGE_EXCLUDE = "x11-common"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/x/xorg/x11-common_7.7+3~deb7u1_all.deb;unpack=0;name=deb0\
 "

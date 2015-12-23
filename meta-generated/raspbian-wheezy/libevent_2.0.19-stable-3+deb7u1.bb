@@ -1,6 +1,5 @@
 PACKAGES = "libevent-2.0-5 libevent-dev libevent-openssl-2.0-5 libevent-core-2.0-5 libevent-extra-2.0-5 libevent-pthreads-2.0-5"
 PROVIDES = "libevent-2.0-5 libevent-dev libevent-openssl-2.0-5 libevent-core-2.0-5 libevent-extra-2.0-5 libevent-pthreads-2.0-5"
-PACKAGE_EXCLUDE = "libevent-2.0-5 libevent-dev libevent-openssl-2.0-5 libevent-core-2.0-5 libevent-extra-2.0-5 libevent-pthreads-2.0-5"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libe/libevent/libevent-2.0-5_2.0.19-stable-3+deb7u1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/libe/libevent/libevent-dev_2.0.19-stable-3+deb7u1_armhf.deb;unpack=0;name=deb1\

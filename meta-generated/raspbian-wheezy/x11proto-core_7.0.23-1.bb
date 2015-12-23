@@ -1,6 +1,5 @@
 PACKAGES = "x11proto-core-dev"
 PROVIDES = "x11proto-core-dev"
-PACKAGE_EXCLUDE = "x11proto-core-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/x/x11proto-core/x11proto-core-dev_7.0.23-1_all.deb;unpack=0;name=deb0\
 "

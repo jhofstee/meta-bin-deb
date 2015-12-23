@@ -1,6 +1,5 @@
 PACKAGES = "gcc-4.4-base g++-4.4 cpp-4.4 gcc-4.4 libstdc++6-4.4-dev"
 PROVIDES = "gcc-4.4-base g++-4.4 cpp-4.4 gcc-4.4 libstdc++6-4.4-dev"
-PACKAGE_EXCLUDE = "gcc-4.4-base g++-4.4 cpp-4.4 gcc-4.4 libstdc++6-4.4-dev"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/g/gcc-4.4/gcc-4.4-base_4.4.7-3+rpi1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/g/gcc-4.4/g++-4.4_4.4.7-3+rpi1_armhf.deb;unpack=0;name=deb1\

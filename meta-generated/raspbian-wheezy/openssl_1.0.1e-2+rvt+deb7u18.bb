@@ -1,6 +1,5 @@
 PACKAGES = "libssl1.0.0"
 PROVIDES = "libssl1.0.0"
-PACKAGE_EXCLUDE = "libssl1.0.0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/o/openssl/libssl1.0.0_1.0.1e-2+rvt+deb7u18_armhf.deb;unpack=0;name=deb0\
 "

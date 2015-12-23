@@ -1,6 +1,5 @@
 PACKAGES = "libjpeg8"
 PROVIDES = "libjpeg8"
-PACKAGE_EXCLUDE = "libjpeg8"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/libj/libjpeg8/libjpeg8_8d-1+deb7u1_armhf.deb;unpack=0;name=deb0\
 "

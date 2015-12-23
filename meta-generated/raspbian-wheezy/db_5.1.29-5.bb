@@ -1,6 +1,5 @@
 PACKAGES = "libdb5.1"
 PROVIDES = "libdb5.1"
-PACKAGE_EXCLUDE = "libdb5.1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/d/db/libdb5.1_5.1.29-5_armhf.deb;unpack=0;name=deb0\
 "

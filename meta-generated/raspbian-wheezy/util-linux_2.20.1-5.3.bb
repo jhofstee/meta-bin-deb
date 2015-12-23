@@ -1,6 +1,5 @@
 PACKAGES = "libuuid1"
 PROVIDES = "libuuid1"
-PACKAGE_EXCLUDE = "libuuid1"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/u/util-linux/libuuid1_2.20.1-5.3_armhf.deb;unpack=0;name=deb0\
 "

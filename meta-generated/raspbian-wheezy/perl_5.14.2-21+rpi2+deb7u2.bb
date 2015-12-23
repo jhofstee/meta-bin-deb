@@ -1,6 +1,5 @@
 PACKAGES = "perl-base"
 PROVIDES = "perl-base"
-PACKAGE_EXCLUDE = "perl-base"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/p/perl/perl-base_5.14.2-21+rpi2+deb7u2_armhf.deb;unpack=0;name=deb0\
 "

@@ -1,6 +1,5 @@
 PACKAGES = "libqt4-designer libqtcore4 libqt4-scripttools libqt4-dbus libqt4-script libqt4-qt3support libqtdbus4 libqt4-declarative libqt4-dev-bin libqt4-xml libqt4-network qt4-qmake libqt4-help libqtgui4 libqt4-svg qt4-linguist-tools libqt4-dev libqt4-test qdbus libqt4-sql libqt4-xmlpatterns"
 PROVIDES = "libqt4-designer libqtcore4 libqt4-scripttools libqt4-dbus libqt4-script libqt4-qt3support libqtdbus4 libqt4-declarative libqt4-dev-bin libqt4-xml libqt4-network qt4-qmake libqt4-help libqtgui4 libqt4-svg qt4-linguist-tools libqt4-dev libqt4-test qdbus libqt4-sql libqt4-xmlpatterns"
-PACKAGE_EXCLUDE = "libqt4-designer libqtcore4 libqt4-scripttools libqt4-dbus libqt4-script libqt4-qt3support libqtdbus4 libqt4-declarative libqt4-dev-bin libqt4-xml libqt4-network qt4-qmake libqt4-help libqtgui4 libqt4-svg qt4-linguist-tools libqt4-dev libqt4-test qdbus libqt4-sql libqt4-xmlpatterns"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/q/qt4-x11/libqt4-designer_4.8.2+dfsg-11+rpi1_armhf.deb;unpack=0;name=deb0\
 	http://archive.raspbian.org/raspbian/pool/main/q/qt4-x11/libqtcore4_4.8.2+dfsg-11+rpi1_armhf.deb;unpack=0;name=deb1\

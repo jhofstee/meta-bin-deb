@@ -1,6 +1,5 @@
 PACKAGES = "libglib2.0-0"
 PROVIDES = "libglib2.0-0"
-PACKAGE_EXCLUDE = "libglib2.0-0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/g/glib2.0/libglib2.0-0_2.33.12+really2.32.4-5_armhf.deb;unpack=0;name=deb0\
 "

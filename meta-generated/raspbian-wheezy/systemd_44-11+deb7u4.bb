@@ -1,6 +1,5 @@
 PACKAGES = "libsystemd-login0"
 PROVIDES = "libsystemd-login0"
-PACKAGE_EXCLUDE = "libsystemd-login0"
 SRC_URI = " \
 	http://archive.raspbian.org/raspbian/pool/main/s/systemd/libsystemd-login0_44-11+deb7u4_armhf.deb;unpack=0;name=deb0\
 "
