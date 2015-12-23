@@ -154,9 +154,10 @@ PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}binutils ?= "binutils-external-cross-
 
 # the binary libc6-dev will install all of these, since it doesn't need to bootstrap the compiler nor libc
 PROVIDES_append_pn-libc6-dev = " virtual/libc linux-libc-headers virtual/${TARGET_PREFIX}compilerlibs virtual/${TARGET_PREFIX}libc-for-gcc"
-PREFERRED_PROVIDER_virtual-libc ?= "libc6-dev"
+PROVIDES_append_pn-eglibc = " virtual/libc virtual/${TARGET_PREFIX}compilerlibs virtual/${TARGET_PREFIX}libc-for-gcc"
+PREFERRED_PROVIDER_virtual-libc ?= "eglibc"
 PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}compilerlibs ?= "${PREFERRED_PROVIDER_virtual-libc}"
 PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}libc-for-gcc ?= "${PREFERRED_PROVIDER_virtual-libc}"
 PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}libc-initial ?= "${PREFERRED_PROVIDER_virtual-libc}"
-PREFERRED_PROVIDER_linux-libc-headers ?= "${PREFERRED_PROVIDER_virtual-libc}"
+PREFERRED_PROVIDER_linux-libc-headers ?= "linux-libc-headers"
 
