@@ -165,7 +165,7 @@ class DebPackage:
 	def oe_recipe(self):
 		if "Source" in self.info:
 			ret = self.info['Source']
-			ret = re.sub(r'\([A-Za-z0-9+-.]*\)', r'', ret).strip()
+			ret = re.sub(r'\([A-Za-z0-9+-.():]*\)', r'', ret).strip()
 		else:
 			ret = self.info['Package']
 		return ret
