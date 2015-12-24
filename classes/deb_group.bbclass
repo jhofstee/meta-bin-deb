@@ -1,7 +1,6 @@
 do_patch[noexec] = "1"
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
-do_package[noexec] = "1"
 do_package_qa[noexec] = "1"
 do_package_write_deb[noexec] = "1"
 do_perform_packagecopy[noexec] = "1"
