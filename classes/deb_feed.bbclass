@@ -1,5 +1,7 @@
 inherit blacklist
 
+DEBFEED_PN_WHITELIST ?= "package-index"
+
 python check_deb_feed_provides_package () {
 	import oe.deb_feed
 
@@ -39,6 +41,10 @@ python () {
 		return
 
 	PN = d.getVar("PN", True)
+	whitelist = d.getVar("DEBFEED_PN_WHITELIST", False)
+	if PN in whitelist:
+		return
+
 	deb = d.getVar("DEBIANNAME", True) or ""
 	file = d.getVar("FILE", True)
 	raise bb.parse.SkipPackage("blacklisted source build from openembedded core" + deb + " (" + file + ")")
