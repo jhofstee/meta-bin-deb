@@ -36,6 +36,7 @@ TCMODE = "external-raspberrypi"
 TARGET_OS = "linux-gnueabihf"
 EXTERNAL_TOOLCHAIN = "/home/jeroen/software/raspberrypi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64"
 TARGET_SYS = "arm-linux-gnueabihf"
+DISTRO = "raspbian-wheezy"
 
 ----------------------------------------------------------------------------------
 On Ubuntu-14.04 the following can be added to local.conf:
