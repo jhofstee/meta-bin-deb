@@ -33,6 +33,22 @@ python () {
 	package_arch = (d.getVar("PACKAGE_ARCH", True) or "")
 	host_arch = (d.getVar("HOST_ARCH", True) or "")
 
+	PN = d.getVar("PN", True)
+	rdepends = (d.getVar("RDEPENDS_" + PN, True) or "")
+	changed = False
+	new_depends = []
+	for rdepend in rdepends.split():
+		deb_name = (d.getVar("DEBIANNAME_" + rdepend, True) or "")
+		if deb_name != "":
+			rdepend = deb_name
+			changed = True
+		new_depends.append(rdepend)
+
+	if changed:
+		new_depends = set(new_depends)
+		rdepends = " ".join(new_depends)
+		d.setVar("RDEPENDS_" + PN, rdepends)
+
 	if package_arch == host_arch:
 		return
 
