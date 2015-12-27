@@ -84,6 +84,8 @@ class DebPackage:
 		print(lines)
 		for line in lines:
 			parts = line.split()
+			if 'd' in parts[0]:
+				continue
 			contents[parts[5]] = 1
 		print(contents)
 		return contents
