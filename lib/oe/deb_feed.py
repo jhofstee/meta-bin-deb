@@ -7,6 +7,7 @@ import sys
 from urlparse import urlparse
 from os.path import basename
 import shutil
+from collections import OrderedDict
 
 """ Info about a deb file """
 class DebPackage:
@@ -168,6 +169,7 @@ class DebPackage:
 		if "Source" in self.info:
 			ret = self.info['Source']
 			ret = re.sub(r'\([A-Za-z0-9+-.():]*\)', r'', ret).strip()
+			ret = re.sub(r'-defaults$', r'', ret)
 		else:
 			ret = self.info['Package']
 		return ret
@@ -484,6 +486,8 @@ class OeMetaGenerator:
 	""" creates oe-recipes grouped by Source """
 	def create_meta_grouped(self):
 		recipes = {}
+
+		self.packages = OrderedDict(sorted(self.packages.items(), key=lambda t: t[0]))
 
 		""" create dict with recipe_name to provided packages """
 		for deb in self.packages.values():
