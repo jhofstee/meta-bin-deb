@@ -308,6 +308,15 @@ class OeMetaGenerator:
 		f.close()
 		self.apt_get(["update"])
 
+		# workaround for bitbake package-index, normally done by apt-native, but using host tools..
+		etc = d.getVar("STAGING_ETCDIR_NATIVE", True)
+		apt_conf = os.path.join(etc, "apt", "apt.conf.sample")
+		if os.path.isfile(apt_conf):
+			return
+		core_base = d.getVar("COREBASE", True)
+		os.makedirs(os.path.abspath(apt_conf + "/.."))
+		shutil.copyfile(core_base + "/meta/recipes-devtools/apt/files/apt.conf", apt_conf)
+
 	def write_apt_conf(self, apt_conf):
 		f = open(apt_conf, 'w')
 
