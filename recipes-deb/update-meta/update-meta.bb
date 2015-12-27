@@ -4,8 +4,8 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 INHIBIT_DEFAULT_DEPS = "1"
 inherit native
 
-DEB_PKGS = "python-dbus libc6-dev libx11-dev libqt4-dev libevent-dev dbus libdbus-1-dev qt4-qmake libboost-program-options-dev libboost-system-dev libboost-thread-dev libboost-regex-dev"
-#DEB_PKGS = "libdbus-1-dev"
+DEB_PKGS = "libc6-dev libx11-dev libqt4-dev libevent-dev dbus libdbus-1-dev qt4-qmake libboost-program-options-dev libboost-system-dev libboost-thread-dev libboost-regex-dev"
+DEB_PKGS += "python-argparse python-dbus python-gobject python-requests python-lxml"
 
 python do_compile () {
 	import oe.deb_feed
