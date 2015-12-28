@@ -15,7 +15,13 @@ qmake2_do_configure() {
 		die "QMAKE_PROFILES not set and no profiles found in $PWD"
 	fi
 
-	${QMAKE_CROSS} $PROFILES
+	if [ ! -z "${EXTRA_QMAKEVARS_POST}" ]; then
+		AFTER="-after"
+		QMAKE_VARSUBST_POST="${EXTRA_QMAKEVARS_POST}"
+		bbnote "qmake postvar substitution: ${EXTRA_QMAKEVARS_POST}"
+	fi
+
+	${QMAKE_CROSS} $AFTER $PROFILES $QMAKE_VARSUBST_POST
 }
 
 EXPORT_FUNCTIONS do_configure
