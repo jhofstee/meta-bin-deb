@@ -67,6 +67,7 @@ class DebPackage:
 		depends = self.get_depends()
 		for depend in depends:
 			last = depend.split("|")[0].strip()
+			last = re.sub(r':any', r'', last)
 			print("CHOSEN: " + last)
 			ret.append(last)
 		return ret
