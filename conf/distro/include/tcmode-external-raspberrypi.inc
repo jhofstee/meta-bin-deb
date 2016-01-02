@@ -142,17 +142,3 @@ PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}gcc-initial ?= "gcc-external-cross-${
 PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}gcc-intermediate ?= "gcc-external-cross-${TARGET_ARCH}"
 PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}g++ ?= "gcc-external-cross-${TARGET_ARCH}"
 PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}binutils ?= "binutils-external-cross-${TARGET_ARCH}"
-
-# the binary libc6-dev will install all of these, since it doesn't need to bootstrap the compiler nor libc
-PROVIDES_append_pn-eglibc = " virtual/libc virtual/${TARGET_PREFIX}libc-for-gcc"
-PREFERRED_PROVIDER_virtual-libc ?= "eglibc"
-PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}libc-for-gcc ?= "${PREFERRED_PROVIDER_virtual-libc}"
-PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}libc-initial ?= "${PREFERRED_PROVIDER_virtual-libc}"
-PREFERRED_PROVIDER_linux-libc-headers ?= "linux-libc-headers"
-
-# use the stdc++ library of the target
-PROVIDES_append_pn-gcc-4.4 = " virtual/${TARGET_PREFIX}compilerlibs"
-PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}compilerlibs ?= "gcc-4.4"
-
-TOOLCHAIN_OPTIONS += "-I ${STAGING_DIR_TARGET}/usr/include/c++/4.4"
-TOOLCHAIN_OPTIONS += "-I ${STAGING_DIR_TARGET}/usr/include/c++/4.4/${TARGET_SYS}"
