@@ -17,18 +17,9 @@ INHERIT += "external-common"
 
 # Ensure that we don't pull in any internal toolchain recipes
 INHERIT += "blacklist blacklist_dynamic"
-PNBLACKLIST[uclibc] = "not building with an external toolchain 1"
-PNBLACKLIST[uclibc-initial] = "not building with an external toolchain 2"
-PNBLACKLIST[glibc] = "not building with an external toolchain 3"
-PNBLACKLIST[glibc-initial] = "not building with an external toolchain 4"
-PNBLACKLIST[glibc-intermediate] = "not building with an external toolchain 5"
 PNBLACKLIST[gcc-runtime] = "not building with an external toolchain 6"
 PNBLACKLIST[gcc-sanitizers] = "not building with an external toolchain 7"
 PNBLACKLIST[gcc-source] = "not building with an external toolchain 8"
-PNBLACKLIST[libgcc-initial] = "not building with an external toolchain 9"
-PNBLACKLIST[libgcc] = "not building with an external toolchain 10"
-PNBLACKLIST[linux-libc-headers] = "not building with an external toolchain 11"
-PNBLACKLIST[linux-libc-headers-yocto] = "not building with an external toolchain 12"
 PNBLACKLIST[external-sourcery-toolchain] = "using meta-sourcery, not poky's external toolchain 13"
 
 PNBLACKLIST_DYNAMIC += "\
