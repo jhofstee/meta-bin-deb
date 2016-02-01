@@ -385,7 +385,13 @@ class OeMetaGenerator:
 
 	""" info needed to lookup the name of the debfile for package_name """
 	def apt_get_download_info(self, package_name):
-		return self.apt_get(["--print-uris", "download", package_name])
+		try:
+			ret = self.apt_get(["--print-uris", "download", package_name])
+		except subprocess.CalledProcessError:
+			bb.error("print-uris failed for " + package_name + " (no such package?)")
+			exit()
+
+		return ret
 
 	""" do actually download the deb file """
 	def apt_get_download(self, package_name):
