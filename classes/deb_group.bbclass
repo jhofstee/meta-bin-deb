@@ -32,7 +32,7 @@ python deb_group_do_extract_deb () {
 					os.symlink(rel, symlink)
 }
 
-addtask extract_deb after do_compile before do_install
+addtask extract_deb after do_install before do_populate_sysroot
 
 EXPORT_FUNCTIONS do_extract_deb
 
