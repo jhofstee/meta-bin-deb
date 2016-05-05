@@ -5,7 +5,7 @@ do_package_qa[noexec] = "1"
 do_package_write_deb[noexec] = "1"
 do_perform_packagecopy[noexec] = "1"
 
-python deb_group_do_install () {
+python deb_group_do_extract_deb () {
 	import subprocess
 	import os
 
@@ -32,5 +32,7 @@ python deb_group_do_install () {
 					os.symlink(rel, symlink)
 }
 
-EXPORT_FUNCTIONS do_install
+addtask extract_deb after do_compile before do_install
+
+EXPORT_FUNCTIONS do_extract_deb
 
