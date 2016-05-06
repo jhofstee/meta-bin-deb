@@ -4,6 +4,10 @@ QMAKE_CROSS = "qmake -spec ${QT_MKSPEC_CROSS_PATH}"
 
 DEPENDS_prepend += "qt4-mkspecs libqt4-dev "
 
+# We override this completely to eliminate the -e normally passed in
+# Otherwise DEFINES etc in the project wont work
+EXTRA_OEMAKE = ' MAKEFLAGS= '
+
 qmake2_do_configure() {
 	if [ -z "${QMAKE_PROFILES}" ]; then
 		PROFILES="`ls *.pro`"
