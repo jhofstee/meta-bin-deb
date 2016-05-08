@@ -317,6 +317,7 @@ class OeMetaGenerator:
 		core_base = d.getVar("COREBASE", True)
 		os.makedirs(os.path.abspath(apt_conf + "/.."))
 		shutil.copyfile(core_base + "/meta/recipes-devtools/apt/files/apt.conf", apt_conf)
+		os.remove(apt_conf)
 
 	def write_apt_conf(self, apt_conf):
 		f = open(apt_conf, 'w')
