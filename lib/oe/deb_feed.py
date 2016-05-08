@@ -551,7 +551,7 @@ def oe_get_meta_generator(d):
 	tmp_dir = d.getVar("TMPDIR", True)
 	core_base = d.getVar("COREBASE", True)
 	bindeb_base = d.getVar("BINDEBBASE", True)
-	download_path = os.path.abspath(os.path.join(d.getVar("DL_DIR", True), distro))
+	download_path = os.path.abspath(d.getVar("DL_DIR", True))
 	deb_path = os.path.abspath(os.path.join(tmp_dir, "deb", distro))
 	meta_generated = os.path.join(bindeb_base, "meta-generated", distro)
 	# todo: complain when not set
