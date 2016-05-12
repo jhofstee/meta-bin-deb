@@ -5,38 +5,37 @@ with OE which can actually be installed and run on a deb based distribution.
 This is done by "debootstrapping" the staging image from a deb repository and
 linking against it.
 
-For now I am fiddling with the raspbian/rapberrypi, which is a good candidate,
-since it needs armv6 + hf instead of armel or armhf raspbian, but for Debian
-you need armel and armhf support... Ideally there will be deb files created
-for all of them for each distro version not EOL yet. (The deb repository is not
-necessarily Debian based, an OE package feed can be used as input as well, at
-least in theory).
+These repositories are build against:
+ - debian-jessie
+ - raspbian-jessie
+ - raspbian-wheezy
 
-Is this going to work at all? No idea, we will see! The applications I
-intend to build don't have a lot of dependencies though. dbus, libevent, Qt
-and python is used. The latter two are good candidates trouble...
+(The deb repository is not necessarily Debian based, an OE package feed can be used
+as input as well, at least in theory).
 
 To get started, a toolchains is needed. Instead of building it, the one supplied
-by the distro is used, so it will be the same / compatible with the deb files.
-The libgcc and libc are taken from the deb files themselves.
+by the host/distro is used, so it will be the same / compatible with the deb files.
+The libgcc and libc are taken from the deb files themselves. For debian the host
+cross compiler is used.
 
 The machine config from OE is used at the moment, for the simple reason that
 I don't know how to get it out of the deb repository.
 
-script/create_meta.py creates the bitbake recipes to download and stage the deb
-files from the repository. Loads of improvements can be made to it, but it is
-good enough for now to see if this is a complete stupid idea, or can be made to
-work (at least for myself...)
+https://github.com/victronenergy/venus is now used for building. The following
+can be used to checkout the needed repositories: (or fetch instead of fetch-all
+without victron git access)
 
-----------------------------------------------------------------------------------
-For the raspberry I uses the toolchain from https://github.com/raspberrypi/tools
+make CONFIG=raspbian fetch-all
 
-MACHINE = "raspberrypi"
-TCMODE = "external-raspberrypi"
-TARGET_OS = "linux-gnueabihf"
-EXTERNAL_TOOLCHAIN = "/home/jeroen/software/raspberrypi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64"
-TARGET_SYS = "arm-linux-gnueabihf"
-DISTRO = "raspbian-wheezy"
+# this will update the generated meta layer
+make bb
+export DISTRO=raspbian-jessi
+bitbake update-meta
+
+Above creates the bitbake recipes to download and stage the deb files from the repository.
+Loads of improvements can be made to it, but it is good enough to get things working.
+
+Thereafter an attempt can be made to bitbake something as usual.
 
 ----------------------------------------------------------------------------------
 On Ubuntu-14.04 the following can be added to local.conf:
@@ -46,9 +45,5 @@ to prevent building host tools (you do need to have the packages installed on th
 of course for it to work at all). And it will brick some recipes....!
 
 ----------------------------------------------------------------------------------
-openembedded-core from https://github.com/jhofstee/openembedded-core/tree/jethro-bin-deb is used.
-bitbake is 16bfd3e3d145705a2b3a05648ddbcacc7a338dfa
-
-----------------------------------------------------------------------------------
 test program are in recipes-test, e.g. bitbake hello-from-qt should create a deb file
-linked against qt 4.8.2....
+linked against qt....
