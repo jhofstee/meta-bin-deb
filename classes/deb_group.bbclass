@@ -5,6 +5,8 @@ do_package_qa[noexec] = "1"
 do_package_write_deb[noexec] = "1"
 do_perform_packagecopy[noexec] = "1"
 
+DL_DIR_append = "/../${DISTRO}"
+
 python deb_group_do_extract_deb () {
 	import subprocess
 	import os
