@@ -419,8 +419,7 @@ class OeMetaGenerator:
 
 	def download_deb(self, package_name):
 		if not os.path.isdir(self.deb_download):
-			bb.error("apparently the download dir '" + self.deb_download + "' does not exist, giving up")
-			exit();
+			os.mkdir(self.deb_download)
 
 		info_line = self.apt_get_download_info(package_name)
 		info = info_line.split(" ")

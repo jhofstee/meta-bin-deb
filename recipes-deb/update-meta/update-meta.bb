@@ -34,8 +34,6 @@ python do_compile () {
 
 	bb.warn("creating meta")
 	oe_gen.create_meta_grouped()
-
-	bb.error("done, need to be reloaded, error instead")
 }
 
 do_compile[nostamp] = "1"
