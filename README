@@ -29,13 +29,23 @@ make CONFIG=raspbian fetch-all
 
 # this will update the generated meta layer
 make bb
-export DISTRO=raspbian-jessi
+export DISTRO=raspbian-jessie
 bitbake update-meta
 
 Above creates the bitbake recipes to download and stage the deb files from the repository.
 Loads of improvements can be made to it, but it is good enough to get things working.
 
 Thereafter an attempt can be made to bitbake something as usual.
+
+dependencies
+------------
+Note: qmake / moc from the host system is used and must be available!
+e.g. sudo apt-get install libqt4-dev will install them (and more...)
+
+The debian build relies on the host crosscompiler being installed
+apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf binutils-arm-linux-gnueabi
+
+The `bitbake package-index` command requires reprepro to be installed.
 
 ----------------------------------------------------------------------------------
 On Ubuntu-14.04 the following can be added to local.conf:
