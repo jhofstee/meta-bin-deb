@@ -9,7 +9,7 @@ DEB_PKGS = "libc6-dev libx11-dev libqt4-dev libevent-dev dbus libdbus-1-dev qt4-
 
 DEB_PKGS += "python-dbus python-gobject python-requests python-lxml"
 # move to libpython2.7-stdlib in wheezy+
-DEB_PKGS_wheezy += "python-argparse"
+DEB_PKGS_append_wheezy += "python-argparse"
 
 DEB_PKGS += "daemontools-run"
 DEB_PKGS += "initscripts"
