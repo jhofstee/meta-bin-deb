@@ -54,6 +54,20 @@ python () {
 
 	file = (d.getVar("FILE", True) or "")
 	if "/openembedded-core/" not in file:
+		depends = (d.getVar("DEPENDS", True) or "")
+		changed = False
+		new_depends = []
+		for depend in depends.split():
+			deb_name = (d.getVar("DEBIANNAME_" + depend, True) or "")
+			if deb_name != "":
+				depend = deb_name
+				changed = True
+			new_depends.append(depend)
+
+		if changed:
+			new_depends = set(new_depends)
+			depends = " ".join(new_depends)
+			d.setVar("DEPENDS", depends)
 		return
 
 	PN = d.getVar("PN", True)
