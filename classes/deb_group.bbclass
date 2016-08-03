@@ -1,3 +1,11 @@
+DESCRIPTION = " \
+update-meta has two approaches \
+  - a one-n-one match of deb-file and recipe name \
+  - recipes name by the sources name providing multiple deb packages \
+\
+This class extract the files for the second approach (as in a group of them) \
+"
+
 do_patch[noexec] = "1"
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
@@ -5,6 +13,9 @@ do_package_qa[noexec] = "1"
 do_package_write_deb[noexec] = "1"
 do_perform_packagecopy[noexec] = "1"
 
+# note: this assumes the DLDIR is something like download/openembedded, so by default
+# the OE downloads get reused, and the deb files cannot overlap them by placing them
+# next to them...
 DL_DIR_append = "/../${DISTRO}"
 
 python deb_group_do_extract_deb () {
@@ -12,17 +23,18 @@ python deb_group_do_extract_deb () {
 	import os
 
 	packages = d.get("PACKAGES", True)
-	pkgdest = d.getVar('PKGDEST', True)
 	workdir = d.getVar('WORKDIR', True)
 	D = d.getVar('D', True)
 
 	for pkg in packages.split():
 		deb = d.get("DEBFILENAME_" + pkg, None)
 		if deb:
+			print("extract deb contents to " + D)
 			bb.plain("EXTRACT: " + deb)
 			out = subprocess.check_output(["dpkg-deb", "--extract", workdir + "/" + deb, D])
 			print(out)
 
+			# make absolute symlinks relative ones
 			symlinks = subprocess.check_output(["find", D, "-type", "l"])
 			for symlink in symlinks.split():
 				tg = os.readlink(symlink)
@@ -31,10 +43,11 @@ python deb_group_do_extract_deb () {
 					rel = os.path.relpath(abs, os.path.dirname(symlink))
 					print(symlink + " : " + abs + " -> " + rel)
 					os.remove(symlink)
+					print(str(rel) + " -> " + str(symlink))
 					os.symlink(rel, symlink)
 }
 
-addtask extract_deb after do_install before do_populate_sysroot
+addtask extract_deb after do_install before do_populate_sysroot do_package
 
 EXPORT_FUNCTIONS do_extract_deb
 
