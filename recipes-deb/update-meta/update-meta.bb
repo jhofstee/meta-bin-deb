@@ -11,8 +11,12 @@ DEB_PKGS += "python-dbus python-gobject python-requests python-lxml"
 # move to libpython2.7-stdlib in wheezy+
 DEB_PKGS_append_wheezy += "python-argparse"
 
+DEB_PKGS += "base-files base-passwd"
+DEB_PKGS += "sysv-rc"
 DEB_PKGS += "daemontools-run"
 DEB_PKGS += "initscripts"
+DEB_PKGS += "mosquitto"
+DEB_PKGS += "libgupnp-1.0-dev glib-2.0"
 
 python do_compile () {
 	import oe.deb_feed
@@ -22,7 +26,7 @@ python do_compile () {
 	oe_gen.check_setup()
 
 	deb_pkgs = d.getVar("DEB_PKGS", True)
-	pkgs = set(re.findall("[a-zA-Z0-9_-]+", deb_pkgs))
+	pkgs = set(re.findall("[.a-zA-Z0-9_-]+", deb_pkgs))
 
 	bb.note("adding packages")
 	for pkg in pkgs:

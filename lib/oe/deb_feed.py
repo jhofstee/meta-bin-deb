@@ -489,6 +489,11 @@ class OeMetaGenerator:
 			depends = re.sub(r'libgcc1', r'', depends)
 			self.packages["libc6"].info['Depends'] = depends.strip()
 
+		if "libglib2.0-dev" in self.packages:
+			depends = self.packages["libglib2.0-dev"].info['Depends']
+			depends = re.sub(r'pkg-config \(>= [0-9-.]*\)', r'', depends)
+			self.packages["libglib2.0-dev"].info['Depends'] = depends.strip()
+
 	def create_meta(self):
 		if os.path.exists(self.meta_path):
 			shutil.rmtree(self.meta_path)

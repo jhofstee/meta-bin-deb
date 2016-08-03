@@ -40,6 +40,10 @@ DEBIANNAME_python-sqlite3 = "python"
 DEBIANNAME_python-subprocess = "python"
 DEBIANNAME_python-pygobject = "python-gobject"
 
+DEBIANNAME_glib-2.0 = "glib2.0"
+
+PROVIDES_append_pn-sysvinit = " update-rc.d"
+
 PREFERRED_PROVIDER_python-lxml = "lxml"
 PREFERRED_PROVIDER_python-requests = "requests"
 

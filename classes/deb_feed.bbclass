@@ -1,6 +1,6 @@
 inherit blacklist
 
-DEBFEED_PN_WHITELIST ?= "package-index"
+DEBFEED_PN_WHITELIST ?= "package-index shadow-sysroot"
 
 python check_deb_feed_provides_package () {
 	import oe.deb_feed
