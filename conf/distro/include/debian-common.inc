@@ -42,6 +42,7 @@ DEBIANNAME_python-pygobject = "python-gobject"
 
 DEBIANNAME_glib-2.0 = "glib2.0"
 
+UPDATERCD = "sysv-rc"
 PROVIDES_append_pn-sysvinit = " update-rc.d"
 
 PREFERRED_PROVIDER_python-lxml = "lxml"
