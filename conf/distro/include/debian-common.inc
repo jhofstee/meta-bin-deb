@@ -41,6 +41,7 @@ DEBIANNAME_python-subprocess = "python"
 DEBIANNAME_python-pygobject = "python-gobject"
 
 DEBIANNAME_glib-2.0 = "glib2.0"
+DEBIANNAME_libsoup-2.4 = "libsoup2.4"
 
 UPDATERCD = "sysv-rc"
 PROVIDES_append_pn-sysvinit = " update-rc.d"
