@@ -47,4 +47,4 @@ MACHINE_EXTRA_RRECOMMENDS += " kernel-modules"
 # Set Raspberrypi splash image
 SPLASH = "psplash-raspberrypi"
 
-IMAGE_BOOT_FILES ?= "bcm2835-bootfiles/* ${KERNEL_IMAGETYPE};${SDIMG_KERNELIMAGE}"
+IMAGE_BOOT_FILES ?= "bcm2835-bootfiles/* ${KERNEL_IMAGETYPE} ${SDIMG_KERNELIMAGE}"
