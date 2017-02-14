@@ -285,7 +285,8 @@ class OeMetaGenerator:
 	def check_setup(self):
 
 		if os.path.exists(self.deb_path):
-			bb.plain("using existing deb feed")
+			bb.plain("updating existing deb feed")
+			self.apt_get(["update"])
 			return
 
 		bb.plain("setting up deb feed")
