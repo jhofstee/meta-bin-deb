@@ -7,7 +7,7 @@ inherit native
 OVERRIDES .= ":${DISTRO_VERSION}"
 DEB_PKGS = "libc6-dev libx11-dev libqt4-dev libevent-dev dbus libdbus-1-dev qt4-qmake libboost-program-options-dev libboost-system-dev libboost-thread-dev libboost-regex-dev"
 
-DEB_PKGS += "python-dbus python-gobject python-requests python-lxml"
+DEB_PKGS += "python-dbus python-gobject python-requests python-lxml python-serial"
 
 DEB_PKGS += "base-files base-passwd"
 DEB_PKGS += "sysv-rc"
