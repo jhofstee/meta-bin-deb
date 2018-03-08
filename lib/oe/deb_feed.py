@@ -4,7 +4,7 @@ import re
 import os
 import subprocess
 import sys
-from urlparse import urlparse
+from urllib.parse import urlparse
 from os.path import basename
 import shutil
 from collections import OrderedDict
@@ -24,7 +24,7 @@ class DebPackage:
 		cmd = ["dpkg", "--admindir=debroot/var/lib/dpkg", "--instdir=rootfs", "--force-architecture"]
 		cmd.extend(args)
 		#print(cmd)
-		out = subprocess.check_output(cmd).strip()
+		out = subprocess.check_output(cmd).decode().strip()
 		print(out)
 		return out
 
@@ -82,7 +82,7 @@ class DebPackage:
 		contents = {}
 		text = self.call_dpkg(['-c', self.local_file_name])
 		# mind it, date takes two fields
-		lines = text.split("\n")
+		lines = text.strip().split("\n")
 		print(lines)
 		for line in lines:
 			parts = line.split()
@@ -103,8 +103,8 @@ class DebPackage:
 
 	def oe_hashes(self):
 		ret = {}
-		ret["md5sum"] = subprocess.check_output(["md5sum", self.local_file_name]).split(" ")[0]
-		ret["sha256sum"] = subprocess.check_output(["sha256sum", self.local_file_name]).split(" ")[0]
+		ret["md5sum"] = subprocess.check_output(["md5sum", self.local_file_name]).decode().split(" ")[0]
+		ret["sha256sum"] = subprocess.check_output(["sha256sum", self.local_file_name]).decode().split(" ")[0]
 		return ret
 
 	def oe_recipe(self):
@@ -128,7 +128,14 @@ class OeDebRecipe:
 
 	def write_bb(self, meta_path):
 		# TODO: sanity check versions (all should be the same)
-		bb_base_name = self.recipe_name + "_" + self.deb_packages[0].info['Version'] + ".bb"
+		# rename glibc recipe to prevent conflicts with meta-external-toolchain (it blacklists glibc)
+		recipe_name = "glibc-deb" if self.recipe_name == "glibc" else self.recipe_name
+		# rocko cannot cope with colons, just remove them...
+		version = self.deb_packages[0].info['Version']
+		n = version.find(":")
+		if n != -1:
+			version = version[n + 1:]
+		bb_base_name = recipe_name + "_" + version + ".bb"
 
 		#bb_sub_dir = "install-" + self.info["Section"]
 		bb_sub_dir = ""
@@ -148,7 +155,7 @@ class OeDebRecipe:
 			deb_urls.append(deb.deb_url())
 			deb_files.append(deb.deb_file_name())
 
-		f.write('PACKAGES = "' + packages.strip() + '"\n');
+		f.write('PACKAGES = "${PN} ' + packages.strip() + '"\n');
 		f.write('PROVIDES = "' + packages.strip() + '"\n');
 
 		f.write('SRC_URI = " \\\n')
@@ -307,13 +314,14 @@ class OeMetaGenerator:
 	def apt_get(self, args):
 		cmd = ["apt-get", "-c", self.deb_path + "/debroot/etc/apt/apt.conf"]
 		cmd.extend(args)
-		#print(cmd)
+		print(cmd)
 
 		""" if not ok raise? """
+		proc = subprocess.run(cmd, stdout=subprocess.PIPE)
 
-		out = subprocess.check_output(cmd).strip()
-		#print(out)
-		return out
+		print(proc)
+		print(proc.stdout)
+		return proc.stdout.decode()
 
 	def apt_cache(self, args):
 		cmd = ["apt-cache", "-c", self.deb_path + "/debroot/etc/apt/apt.conf"]
@@ -323,7 +331,7 @@ class OeMetaGenerator:
 		""" if not ok raise? """
 
 		out = subprocess.check_output(cmd).strip()
-		#print(out)
+		print(out)
 		return out
 
 	""" info needed to lookup the name of the debfile for package_name """
@@ -365,6 +373,10 @@ class OeMetaGenerator:
 
 		info_line = self.apt_get_download_info(package_name)
 		info = info_line.split(" ")
+
+		if len(info) < 4:
+			print("invalid download info for: " + package_name)
+			exit(1)
 
 		uri = info[0]
 		deb_file_name = info[1]
@@ -482,7 +494,7 @@ class OeMetaGenerator:
 
 	""" returns """
 	def can_provide_oe_pn(self, pn):
-		return self.apt_cache(["search", pn]).split("\n")
+		return self.apt_cache(["search", pn]).decode().split("\n")
 
 
 oe_gen = None
