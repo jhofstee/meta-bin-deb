@@ -4,6 +4,8 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 INHIBIT_DEFAULT_DEPS = "1"
 inherit native
 
+DEPENDS += "apt-native"
+
 OVERRIDES .= ":${DISTRO_VERSION}"
 DEB_PKGS = "libc6-dev libx11-dev libqt4-dev libevent-dev dbus libdbus-1-dev qt4-qmake libboost-program-options-dev libboost-system-dev libboost-thread-dev libboost-regex-dev"
 
