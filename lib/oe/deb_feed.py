@@ -209,8 +209,8 @@ class OeDebRecipe:
 				package = "${PN}"
 			elif package == self.recipe_name + "-dev":
 				package = "${PN}-dev"
-			f.write('FILES_' + package + ' = " \\\n\t')
-			f.write(" \\\n\t".join(contents.keys()))
+			f.write('FILES_' + package + ' = " \\\n    ')
+			f.write(" \\\n    ".join(contents.keys()))
 			f.write('\\\n"\n')
 
 		f.write("#FAKE LICENSE FOR TESTING!!!\n")
