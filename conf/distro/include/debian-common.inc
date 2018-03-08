@@ -11,11 +11,7 @@ ERROR_QA = "dev-so debug-deps dev-deps debug-files arch la2 pkgconfig la perms u
 # blacklist blacklist_src_packages
 INHERIT += "deb_feed"
 
-# since we are a multi distro builder, include the distro name in the staging area.
-STAGING_DIR_HOST = "${STAGING_DIR}/${DISTRO}-${MACHINE}"
-STAGING_DIR_TARGET = "${STAGING_DIR}/${DISTRO}-${MACHINE}"
-
-PKG_CONFIG_PATH .= ":${STAGING_DIR_TARGET}/${libdir}/${TARGET_SYS}/pkgconfig"
+PKG_CONFIG_PATH_class-target .= ":${PKG_CONFIG_SYSROOT_DIR}/${libdir}/${EXTERNAL_TARGET_SYS}/pkgconfig"
 
 # no idea...
 LOCALCONF_VERSION = "1"
