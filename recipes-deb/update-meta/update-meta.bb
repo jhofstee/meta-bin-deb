@@ -19,25 +19,25 @@ DEB_PKGS += "mosquitto"
 DEB_PKGS += "libgupnp-1.0-dev glib-2.0"
 
 python do_compile () {
-	import oe.deb_feed
-	import re
+    import oe.deb_feed
+    import re
 
-	oe_gen = oe.deb_feed.oe_get_meta_generator(d)
-	oe_gen.check_setup()
+    oe_gen = oe.deb_feed.oe_get_meta_generator(d)
+    oe_gen.check_setup()
 
-	deb_pkgs = d.getVar("DEB_PKGS", True)
-	pkgs = set(re.findall("[.a-zA-Z0-9_-]+", deb_pkgs))
+    deb_pkgs = d.getVar("DEB_PKGS", True)
+    pkgs = set(re.findall("[.a-zA-Z0-9_-]+", deb_pkgs))
 
-	bb.note("adding packages")
-	for pkg in pkgs:
-		bb.plain("adding deb package for " + pkg)
-		oe_gen.add_deb(pkg)
+    bb.note("adding packages")
+    for pkg in pkgs:
+        bb.plain("adding deb package for " + pkg)
+        oe_gen.add_deb(pkg)
 
-	bb.warn("fixing depedency loops")
-	oe_gen.fix_dependency_loops()
+    bb.warn("fixing depedency loops")
+    oe_gen.fix_dependency_loops()
 
-	bb.warn("creating meta")
-	oe_gen.create_meta_grouped()
+    bb.warn("creating meta")
+    oe_gen.create_meta_grouped()
 }
 
 do_compile[nostamp] = "1"
