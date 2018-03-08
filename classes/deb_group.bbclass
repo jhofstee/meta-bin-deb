@@ -6,6 +6,8 @@ update-meta has two approaches \
 This class extract the files for the second approach (as in a group of them) \
 "
 
+DEPENDS += "dpkg-native"
+
 do_patch[noexec] = "1"
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
@@ -37,11 +39,11 @@ python deb_group_do_extract_deb () {
 			# make absolute symlinks relative ones
 			symlinks = subprocess.check_output(["find", D, "-type", "l"])
 			for symlink in symlinks.split():
-				tg = os.readlink(symlink)
+				tg = os.readlink(symlink).decode()
 				if tg.startswith("/"):
 					abs = os.path.join(D, tg[1:])
-					rel = os.path.relpath(abs, os.path.dirname(symlink))
-					print(symlink + " : " + abs + " -> " + rel)
+					rel = os.path.relpath(abs, os.path.dirname(symlink).decode())
+					print(str(symlink) + " : " + str(abs) + " -> " + rel)
 					os.remove(symlink)
 					print(str(rel) + " -> " + str(symlink))
 					os.symlink(rel, symlink)
