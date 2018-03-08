@@ -107,65 +107,6 @@ class DebPackage:
 		ret["sha256sum"] = subprocess.check_output(["sha256sum", self.local_file_name]).split(" ")[0]
 		return ret
 
-	"""
-	Write bitbake file to install the deb and its dependencies.
-	This provide a single recipe per package.
-	"""
-	def write_bb(self, meta_path):
-		bb_base_name = self.info['Package'] + "_" + self.info['Version'].split(':')[-1]  + ".bb"
-		#bb_sub_dir = "install-" + self.info["Section"]
-		bb_sub_dir = ""
-		bb_path = os.path.join(meta_path, bb_sub_dir)
-		bb_file_name = os.path.join(bb_path, bb_base_name)
-
-		if not os.path.exists(bb_path):
-			os.makedirs(bb_path)
-
-		print("writing bb recipe " + bb_file_name)
-		f = open(bb_file_name, 'w')
-		f.write('PACKAGES = "' + self.info['Package'] + '"\n')
-		f.write('DESCRIPTION = "\\\n')
-		f.write(self.info['Description'].replace("\n ", "\n").replace("\n.", "\n").replace("\n", "\\\n"))
-		f.write('"\n')
-		if 'Homepage' in self.info:
-			f.write('HOMEPAGE = "' + self.info['Homepage'] + '"\n');
-		f.write('SECTION = "' + self.info["Section"] + '"\n');
-		f.write('\n')
-
-		f.write('# Prebuilt binaries, no need for any default dependencies\n')
-		f.write('INHIBIT_DEFAULT_DEPS = "1"\n')
-		f.write('INHIBIT_PACKAGE_STRIP = "1"\n')
-		f.write('INSANE_SKIP_${PN} += "already-stripped"\n')
-
-		if 'Depends' in self.info:
-			f.write('#Depends: ' + self.info['Depends'] + '\n')
-			depends = self.get_chosen_depends()
-			f.write('DEPENDS = "' + ' '.join(depends) + '"\n\n')
-			f.write('RDEPENDS_${PN} = "' + ' '.join(depends) + '"\n\n')
-
-
-		f.write('DEB_FILE_NAME = "' + deb.deb_file_name() + '"\n')
-		f.write('SRC_URI = "' + url + ';unpack=0"\n')
-
-		md5sum = subprocess.check_output(["md5sum", self.local_file_name]).split(" ")[0]
-		f.write('SRC_URI[md5sum] = "' + md5sum + '"\n')
-
-		sha256sum = subprocess.check_output(["sha256sum", self.local_file_name]).split(" ")[0]
-		f.write('SRC_URI[sha256sum] = "' + sha256sum + '"\n')
-
-		f.write('\n')
-		f.write('inherit deb\n')
-
-		f.write('\n')
-		f.write("#FAKE LICENSE FOR TESTING!!!\n")
-		f.write('LICENSE = "MIT"\n')
-		f.write('LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"\n')
-
-		f.write('\n')
-		f.write('FILES_${PN} = "/"')
-
-		print(self.info)
-
 	def oe_recipe(self):
 		if "Source" in self.info:
 			ret = self.info['Source']
