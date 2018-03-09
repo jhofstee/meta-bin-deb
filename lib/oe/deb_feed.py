@@ -311,6 +311,7 @@ class OeMetaGenerator:
 		f.write('};\n')
 		f.write('\n')
 		f.write('DPkg::Options {"-admindir=' + deb_rootfs + '/etc/var/lib/dpkg";"--force-all";"--no-debsig"};\n')
+		f.close()
 
 	def apt_get(self, args):
 		cmd = ["apt-get", "-c", self.deb_path + "/debroot/etc/apt/apt.conf"]
