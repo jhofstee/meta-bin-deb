@@ -1,8 +1,9 @@
 PACKAGE_CLASSES ?= "package_deb"
 DISTRO = "${DISTRO_NAME}-${DISTRO_VERSION}"
 
-SANITY_TESTED_DISTROS ?= " \
-	Ubuntu-14.04 \
+SANITY_TESTED_DISTROS = " \
+	ubuntu-14.04 \n \
+	ubuntu-16.04 \n \
 "
 
 WARN_QA = ""
