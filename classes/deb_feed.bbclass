@@ -45,7 +45,7 @@ python () {
 		new_depends.append(rdepend)
 
 	if changed:
-		new_depends = set(new_depends)
+		new_depends = list(sorted(set(new_depends)))
 		rdepends = " ".join(new_depends)
 		d.setVar("RDEPENDS_" + PN, rdepends)
 
@@ -65,7 +65,7 @@ python () {
 			new_depends.append(depend)
 
 		if changed:
-			new_depends = set(new_depends)
+			new_depends = list(sorted(set(new_depends)))
 			depends = " ".join(new_depends)
 			d.setVar("DEPENDS", depends)
 		return
