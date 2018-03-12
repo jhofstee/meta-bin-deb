@@ -321,11 +321,10 @@ class OeMetaGenerator:
 		print(cmd)
 
 		""" if not ok raise? """
-		proc = subprocess.run(cmd, stdout=subprocess.PIPE)
+		out = subprocess.check_output(cmd).decode()
 
-		print(proc)
-		print(proc.stdout)
-		return proc.stdout.decode()
+		print(out)
+		return out
 
 	def apt_cache(self, args):
 		cmd = ["apt-cache", "-c", self.deb_path + "/debroot/etc/apt/apt.conf"]
