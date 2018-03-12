@@ -235,7 +235,7 @@ class OeMetaGenerator:
 
 		if os.path.exists(self.deb_path):
 			# broken! Read error (-5: DATA_ERROR_MAGIC)
-			return
+			# return
 			bb.plain("updating existing deb feed")
 			self.apt_get(["update"])
 			return
