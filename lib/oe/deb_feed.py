@@ -180,7 +180,7 @@ class OeDebRecipe:
 		for deb in self.deb_packages:
 			if 'Depends' in deb.info:
 				depends = deb.get_chosen_depends()
-				sorted(depends)
+				depends = sorted(depends)
 				f.write('RDEPENDS_' + deb.info['Package'].replace(self.recipe_name, "${PN}") + ' = "' + ' '.join(depends) + '"\n')
 				all_depends.extend(deb.get_chosen_depends_no_version())
 
@@ -189,7 +189,7 @@ class OeDebRecipe:
 			for deb in self.deb_packages:
 				if deb.info['Package'] in all_depends:
 					all_depends.remove(deb.info['Package'])
-			sorted(all_depends)
+			all_depends = sorted(all_depends)
 			print(all_depends)
 			if len(all_depends):
 				f.write('DEPENDS = "' + ' '.join(all_depends) + '"\n\n')
