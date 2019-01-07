@@ -17,6 +17,7 @@ DEB_PKGS += "daemontools-run"
 DEB_PKGS += "initscripts"
 DEB_PKGS += "mosquitto"
 DEB_PKGS += "libgupnp-1.0-dev glib-2.0"
+DEB_PKGS += "bash"
 
 python do_compile () {
     import oe.deb_feed
