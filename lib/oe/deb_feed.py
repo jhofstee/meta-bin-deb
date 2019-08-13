@@ -317,7 +317,7 @@ class OeMetaGenerator:
 		f.close()
 
 	def apt_get(self, args):
-		cmd = ["apt-get", "-c", self.deb_path + "/debroot/etc/apt/apt.conf"]
+		cmd = ["apt-get", "-c", self.deb_path + "/debroot/etc/apt/apt.conf", "--allow-insecure-repositories"]
 		cmd.extend(args)
 		print(cmd)
 
