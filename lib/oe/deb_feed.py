@@ -55,7 +55,7 @@ class DebPackage:
 	def get_depends(self):
 		self.get_dpk_info()
 		if not "Depends" in self.info:
-			return [];
+			return []
 		depends = self.info["Depends"].split(",")
 		return [line.strip() for line in depends]
 
@@ -155,8 +155,8 @@ class OeDebRecipe:
 			deb_urls.append(deb.deb_url())
 			deb_files.append(deb.deb_file_name())
 
-		f.write('PACKAGES = "${PN} ' + packages.strip() + '"\n');
-		f.write('PROVIDES = "' + packages.strip() + '"\n');
+		f.write('PACKAGES = "${PN} ' + packages.strip() + '"\n')
+		f.write('PROVIDES = "' + packages.strip() + '"\n')
 
 		f.write('SRC_URI = " \\\n')
 		n = 0
@@ -263,8 +263,8 @@ class OeMetaGenerator:
 		self.apt_get(["update"])
 
 		# workaround for bitbake package-index, normally done by apt-native, but using host tools..
-		etc = d.getVar("STAGING_ETCDIR_NATIVE", True)
-		apt_conf = os.path.join(etc, "apt", "apt.conf.sample")
+		#etc = d.getVar("STAGING_ETCDIR_NATIVE", True)
+		#apt_conf = os.path.join(etc, "apt", "apt.conf.sample")
 		#if os.path.isfile(apt_conf):
 		#	return
 		#core_base = d.getVar("COREBASE", True)
@@ -382,11 +382,11 @@ class OeMetaGenerator:
 			print("invalid download info for: " + package_name)
 			exit(1)
 
-		uri = info[0]
+		_uri = info[0]
 		deb_file_name = info[1]
 		print("deb_file_name: " + deb_file_name)
-		size = info[2]
-		hash = info[3]
+		_size = info[2]
+		_hash = info[3]
 
 		if os.path.isfile(self.deb_download + "/" + deb_file_name):
 			print("deb file cached " + deb_file_name)
@@ -512,7 +512,6 @@ def oe_get_meta_generator(d):
 
 	distro = d.getVar("DISTRO", True)
 	tmp_dir = d.getVar("TMPDIR", True)
-	core_base = d.getVar("COREBASE", True)
 	bindeb_base = d.getVar("BINDEBBASE", True)
 	download_path = os.path.abspath(os.path.join(d.getVar("DL_DIR", True), "..", distro))
 	deb_path = os.path.abspath(os.path.join(tmp_dir, "deb", distro))
