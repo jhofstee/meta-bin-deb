@@ -328,13 +328,14 @@ class OeMetaGenerator:
 		return out
 
 	def apt_cache(self, args):
-		cmd = ["apt-cache", "-c", self.deb_path + "/debroot/etc/apt/apt.conf"]
+		cmd = ["apt-cache", "-c", self.deb_path + "/debroot/etc/apt/apt.conf", "--quiet=0"]
 		cmd.extend(args)
-		#print(cmd)
+		print(cmd)
 
 		""" if not ok raise? """
 
-		out = subprocess.check_output(cmd).strip()
+		out = subprocess.check_output(cmd, stderr=subprocess.STDOUT, universal_newlines=True).strip()
+
 		print(out)
 		return out
 
@@ -420,14 +421,22 @@ class OeMetaGenerator:
 		depends_version = deb.get_chosen_depends()
 		print(depends_version)
 		for depend_version in depends_version:
-			depend = depend_version.split(' ', 1)[0]
+			info = depend_version.split(' ', 1)
+			depend = info[0]
 			print(depend_version + " -> " + depend)
-			if depend not in self.packages:
-				print(depend + " is missing")
-				deb = self.download_deb(depend)
 
-				""" owowow, recurse to get depends of the depends... """
-				self.check_depends_of_deb(deb)
+			output = self.apt_cache(["show", depend])
+			is_virtual = "is purely virtual" in output
+
+			if is_virtual:
+				bb.warn(depend + " is a virtual package")
+			else:
+				if depend not in self.packages:
+					print(depend + " is missing")
+					deb = self.download_deb(depend)
+
+					""" owowow, recurse to get depends of the depends... """
+					self.check_depends_of_deb(deb)
 
 		print("package " + deb.info['Package'] + " is complete")
 		deb.depends_fullfilled = True
@@ -498,7 +507,7 @@ class OeMetaGenerator:
 
 	""" returns """
 	def can_provide_oe_pn(self, pn):
-		return self.apt_cache(["search", pn]).decode().split("\n")
+		return self.apt_cache(["search", pn]).split("\n")
 
 
 oe_gen = None
