@@ -8,12 +8,12 @@ This class extract the files for the second approach (as in a group of them) \
 
 DEPENDS += "dpkg-native"
 
-do_patch[noexec] = "1"
-do_configure[noexec] = "1"
-do_compile[noexec] = "1"
-do_package_qa[noexec] = "1"
-do_package_write_deb[noexec] = "1"
-do_perform_packagecopy[noexec] = "1"
+deltask do_compile
+deltask do_package_qa
+deltask do_package_write_deb
+deltask do_perform_packagecopy
+deltask do_packagedata
+deltask do_package
 
 # note: this assumes the DLDIR is something like download/openembedded, so by default
 # the OE downloads get reused, and the deb files cannot overlap them by placing them
@@ -49,7 +49,7 @@ python deb_group_do_extract_deb () {
                     os.symlink(rel, symlink)
 }
 
-addtask extract_deb after do_install before do_populate_sysroot do_package
+addtask extract_deb after do_configure before do_populate_sysroot do_package
 
 EXPORT_FUNCTIONS do_extract_deb
 
