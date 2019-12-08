@@ -55,8 +55,15 @@ class DebPackage:
 	def get_depends(self):
 		self.get_dpk_info()
 		if not "Depends" in self.info:
-			return []
-		depends = self.info["Depends"].split(",")
+			depends = []
+		else:
+			depends = self.info["Depends"].split(",")
+
+		if "Pre-Depends" in self.info:
+			print(self.info["Pre-Depends"])
+			pre_depends = self.info["Pre-Depends"].split(",")
+			print(pre_depends)
+			depends.extend(pre_depends)
 		return [line.strip() for line in depends]
 
 	"""
@@ -178,11 +185,11 @@ class OeDebRecipe:
 
 		all_depends = []
 		for deb in self.deb_packages:
-			if 'Depends' in deb.info:
-				depends = deb.get_chosen_depends()
-				depends = sorted(depends)
-				f.write('RDEPENDS_' + deb.info['Package'].replace(self.recipe_name, "${PN}") + ' = "' + ' '.join(depends) + '"\n')
-				all_depends.extend(deb.get_chosen_depends_no_version())
+			depends = deb.get_chosen_depends()
+			depends = sorted(depends)
+			f.write('RDEPENDS_' + deb.info['Package'].replace(self.recipe_name, "${PN}") + ' = "' + ' '.join(depends) + '"\n')
+			all_depends.extend(deb.get_chosen_depends_no_version())
+
 
 		if len(all_depends):
 			all_depends = set(all_depends)
