@@ -190,6 +190,11 @@ class OeDebRecipe:
 			f.write('RDEPENDS_' + deb.info['Package'].replace(self.recipe_name, "${PN}") + ' = "' + ' '.join(depends) + '"\n')
 			all_depends.extend(deb.get_chosen_depends_no_version())
 
+		if self.recipe_name == "pkg-config":
+			all_depends = []
+
+		if self.recipe_name == "dpkg":
+			all_depends = []
 
 		if len(all_depends):
 			all_depends = set(all_depends)
