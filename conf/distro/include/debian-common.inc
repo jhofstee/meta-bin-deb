@@ -13,11 +13,6 @@ INHERIT += "deb_feed"
 
 PKG_CONFIG_PATH_class-target .= ":${PKG_CONFIG_SYSROOT_DIR}/${libdir}/${EXTERNAL_TARGET_SYS}/pkgconfig"
 
-# no idea...
-LOCALCONF_VERSION = "1"
-LAYER_CONF_VERSION ?= "6"
-OELAYOUT_ABI = "8"
-
 CONNECTIVITY_CHECK_URIS ?= ""
 
 # Debian doesn't split python like OE does, so point them to python itself..
