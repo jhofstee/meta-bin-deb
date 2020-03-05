@@ -49,6 +49,15 @@ python deb_group_do_extract_deb () {
                     os.symlink(rel, symlink)
 }
 
+# Prebuilt binaries, no need for any default dependencies
+INHIBIT_DEFAULT_DEPS = "1"
+INHIBIT_PACKAGE_STRIP = "1"
+INSANE_SKIP_${PN} += "already-stripped"
+
+#FAKE LICENSE FOR TESTING!!!
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
+
 addtask extract_deb after do_configure before do_populate_sysroot do_package
 
 EXPORT_FUNCTIONS do_extract_deb

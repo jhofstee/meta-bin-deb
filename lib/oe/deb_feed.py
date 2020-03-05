@@ -208,12 +208,6 @@ class OeDebRecipe:
 
 		f.write('\n')
 		f.write('inherit deb_group\n')
-
-		f.write('\n')
-		f.write('# Prebuilt binaries, no need for any default dependencies\n')
-		f.write('INHIBIT_DEFAULT_DEPS = "1"\n')
-		f.write('INHIBIT_PACKAGE_STRIP = "1"\n')
-		f.write('INSANE_SKIP_${PN} += "already-stripped"\n')
 		f.write('\n')
 
 		for deb in self.deb_packages:
@@ -227,9 +221,6 @@ class OeDebRecipe:
 			f.write(" \\\n    ".join(sorted(contents.keys())))
 			f.write('\\\n"\n')
 
-		f.write("#FAKE LICENSE FOR TESTING!!!\n")
-		f.write('LICENSE = "MIT"\n')
-		f.write('LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"\n')
 		f.close()
 
 
