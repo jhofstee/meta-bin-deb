@@ -8,6 +8,7 @@
 RRECOMMENDS_${PN}_remove += " \
 	dbus-cgwacs \
 	dbus-fronius \
+	dbus-modbus-client \
 	dbus-qwacs \
 	dbus-redflow \
 "
