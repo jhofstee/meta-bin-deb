@@ -8,4 +8,4 @@ PROVIDES = " \
 
 RPROVIDES_${PN} = "${PROVIDES}"
 
-ALLOW_EMPTY = "1"
+ALLOW_EMPTY_${PN} = "1"
