@@ -7,8 +7,9 @@ This class extract the files for the second approach (as in a group of them) \
 "
 
 DEPENDS += "dpkg-native"
-
-deltask do_compile
+do_patch[noexec] = "1"
+do_configure[noexec] = "1"
+do_compile[noexec] = "1"
 deltask do_package_qa
 deltask do_package_write_deb
 deltask do_perform_packagecopy
@@ -58,7 +59,7 @@ INSANE_SKIP_${PN} += "already-stripped"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
-addtask extract_deb after do_configure before do_populate_sysroot do_package
+addtask extract_deb after do_install before do_populate_sysroot
 
 EXPORT_FUNCTIONS do_extract_deb
 
