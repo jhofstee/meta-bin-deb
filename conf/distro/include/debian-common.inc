@@ -45,6 +45,8 @@ PREFERRED_PROVIDER_python-lxml = "lxml"
 PREFERRED_PROVIDER_python-pymodbus = "pymodbus"
 PREFERRED_PROVIDER_python-requests = "requests"
 
+PREFERRED_VERSION_openssl_forcevariable = ""
+
 DAEMONTOOLS = "daemontools-run"
 RPROVIDES_daemontools_append_pn-daemontools = "daemontools-run-dev"
 DAEMONTOOLS_SERVICES_DIR = "/etc/service"
