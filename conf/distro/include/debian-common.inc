@@ -33,7 +33,8 @@ DEBIANNAME_python-sqlite3 = "python"
 DEBIANNAME_python-subprocess = "python"
 DEBIANNAME_python-pygobject = "python-gobject"
 
-DEBIANNAME_glibc-gconv-iso8859-1 = "glibc-deb"
+# runtime packages
+DEBIANNAME_glibc-gconv-iso8859-1 = "libc6"
 
 DEBIANNAME_glib-2.0 = "glib2.0"
 DEBIANNAME_libsoup-2.4 = "libsoup2.4"
