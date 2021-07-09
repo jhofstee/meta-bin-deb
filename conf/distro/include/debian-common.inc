@@ -33,6 +33,17 @@ DEBIANNAME_python-sqlite3 = "python"
 DEBIANNAME_python-subprocess = "python"
 DEBIANNAME_python-pygobject = "python-gobject"
 
+DEBIANNAME_python3-core = "python3"
+DEBIANNAME_python3-fcntl = "python3"
+DEBIANNAME_python3-io = "python3"
+DEBIANNAME_python3-json = "python3"
+DEBIANNAME_python3-multiprocessing = "python3"
+DEBIANNAME_python3-pprint = "python3"
+DEBIANNAME_python3-pygobject = "python3-gi"
+DEBIANNAME_python3-pyserial = "python3-serial"
+DEBIANNAME_python3-shell = "python3"
+DEBIANNAME_python3-sqlite3 = "python3"
+
 # runtime packages
 DEBIANNAME_glibc-gconv-iso8859-1 = "libc6"
 
