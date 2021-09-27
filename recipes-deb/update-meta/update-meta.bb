@@ -19,6 +19,7 @@ DEB_PKGS += "initscripts"
 DEB_PKGS += "mosquitto"
 DEB_PKGS += "libgupnp-1.0-dev glib-2.0"
 DEB_PKGS += "bash"
+DEB_PKGS += "libbluetooth-dev"
 
 python do_compile () {
     import oe.deb_feed

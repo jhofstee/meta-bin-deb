@@ -44,6 +44,8 @@ DEBIANNAME_python3-pyserial = "python3-serial"
 DEBIANNAME_python3-shell = "python3"
 DEBIANNAME_python3-sqlite3 = "python3"
 
+DEBIANNAME_bluez5 = "bluez"
+
 # runtime packages
 DEBIANNAME_glibc-gconv-iso8859-1 = "libc6"
 
