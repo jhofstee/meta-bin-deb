@@ -11,4 +11,5 @@ RRECOMMENDS_${PN}_remove += " \
 	dbus-modbus-client \
 	dbus-qwacs \
 	dbus-redflow \
+	dbus-rv-c \
 "
