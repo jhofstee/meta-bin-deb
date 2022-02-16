@@ -2,8 +2,8 @@ PACKAGE_CLASSES ?= "package_deb"
 DISTRO = "${DISTRO_NAME}-${DISTRO_VERSION}"
 
 SANITY_TESTED_DISTROS = " \
-	ubuntu-16.04 \n \
 	ubuntu-18.04 \n \
+	ubuntu-20.04 \n \
 "
 
 WARN_QA = ""
