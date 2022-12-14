@@ -5,6 +5,7 @@
 #
 # For now just disable these packages until there is some time to look into it
 
+# dbus-shelly won't work, python3-dbus-next is missing in Debian.
 RRECOMMENDS_${PN}_remove += " \
 	dbus-cgwacs \
 	dbus-fronius \
@@ -12,4 +13,5 @@ RRECOMMENDS_${PN}_remove += " \
 	dbus-qwacs \
 	dbus-redflow \
 	dbus-rv-c \
+	dbus-shelly \
 "
