@@ -4,6 +4,7 @@ DISTRO = "${DISTRO_NAME}-${DISTRO_VERSION}"
 SANITY_TESTED_DISTROS = " \
 	ubuntu-18.04 \n \
 	ubuntu-20.04 \n \
+	ubuntu-22.04 \n \
 "
 
 WARN_QA = ""
